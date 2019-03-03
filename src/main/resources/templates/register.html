@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+<head th:replace="~{fragments/header :: headInfo}">
+
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+<style>
+.loginSet{
+     margin-top:2.1em;
+     margin-bottom:2.1em;
+}
+.form-signin-heading{
+     text-align:center;
+     border-bottom: 2px solid green;
+}
+</style>
+<div class="container blog-content-container">
+      <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2 loginSet">
+		<form th:action="@{/register}"  method="post">
+			<h2 class="form-signin-heading">注册</h2>
+			
+			<div class="form-group">
+				<label for="username" class="col-form-label">账号</label>
+				<input type="text" class="form-control" id="username" name="username" maxlength="50" placeholder="请输入账号，至少3个字符，至多20个">
+	 
+			</div>
+			<div class="form-group">
+				<label for="email" class="col-form-label">邮箱</label>
+				<input type="email" class="form-control" id="email" name="email" maxlength="50" placeholder="请输入邮箱">
+			</div>
+			<div class="form-group">
+				<label for="name" class="col-form-label">姓名</label>
+				<input type="text" class="form-control" id="name" name="name" maxlength="20" placeholder="请输入姓名，至少2个字符，至多20个" >
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-form-label">密码</label>
+				<input type="password" class="form-control" id="password" name="password" maxlength="30" placeholder="请输入密码，字母或特殊符号和数字结合" >
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success btn-lg btn-block">注册</button>
+			</div> 
+		</form>
+		</div>
+    </div>
+</div> <!-- /container -->
+<div th:replace="~{fragments/footer :: footer}">...</div>
+</body>
+</html>
